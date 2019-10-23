@@ -42,7 +42,7 @@ body #createTask button {
 }
 
 body #taskList {
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
   margin-top: 50px;
   text-align: left;
@@ -51,14 +51,17 @@ body #taskList {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 body #taskList h2 {
-  width: 100%;
+  width: 90%;
 }
 
 body #taskList .task {
-  width: 100%;
+  width: 90%;
   background-color: #363357;
   margin: 2px;
   padding: 5px;

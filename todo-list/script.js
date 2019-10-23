@@ -14,9 +14,7 @@ function createPage(){
     inputField.type = "text";
     inputField.placeholder = "New Task here";
     inputField.id = "newTask";
-    let addTaskButton = function (){
-        addTask();
-    }
+
     inputField.addEventListener("keyup", function(event) {
         if (event.keyCode === 13) {
           commitButton.click();
@@ -26,7 +24,10 @@ function createPage(){
 
     let commitButton = document.createElement("button");
     commitButton.textContent = "Add Task";
-    commitButton.addEventListener("click", addTaskButton, false);
+    commitButton.addEventListener("click", function(){
+        addTask();
+        $("#newTask").val("");
+    });
     createTask.appendChild(commitButton);
     document.getElementById("body").appendChild(createTask);
     
