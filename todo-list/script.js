@@ -38,6 +38,7 @@ function createPage(){
 }
 
 function addTask(){
+    
     let newTask = document.createElement("div");
     newTask.className = "task";
 
@@ -60,10 +61,14 @@ function addTask(){
     removeButton.textContent = "\u2573";
     removeButton.className = "remove";
     let removeItem = function(){
+        $(this).fadeOut("1000")
         newTask.parentNode.removeChild(newTask);
     }
     removeButton.addEventListener("click", removeItem, false)
     newTask.appendChild(removeButton);
 
-    document.getElementById("taskList").appendChild(newTask);
+    newTask.style.display = "none";
+    $("#taskList").append(newTask);
+    $(".task").fadeIn("1000");
+    
 }
