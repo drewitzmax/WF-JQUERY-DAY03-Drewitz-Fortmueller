@@ -61,8 +61,9 @@ function addTask(){
     removeButton.textContent = "\u2573";
     removeButton.className = "remove";
     let removeItem = function(){
-        $(this).fadeOut("1000")
-        newTask.parentNode.removeChild(newTask);
+        $(this).parent().fadeOut("1000",function(){
+            newTask.parentNode.removeChild(newTask);
+        })    
     }
     removeButton.addEventListener("click", removeItem, false)
     newTask.appendChild(removeButton);
