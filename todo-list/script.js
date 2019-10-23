@@ -1,6 +1,7 @@
 tasks = 0;
 createPage();
-function createPage(){
+
+function createPage() {
     let header = document.createElement("header");
     let heading = document.createElement("h1");
     heading.textContent = "TO-DO-LIST";
@@ -8,19 +9,19 @@ function createPage(){
     document.getElementById("body").appendChild(header);
 
     let createTask = document.createElement("div");
-    createTask.id= "createTask";
+    createTask.id = "createTask";
     let inputField = document.createElement("input");
     inputField.type = "text";
     inputField.placeholder = "New Task here";
     inputField.id = "newTask";
-    let addTaskButton = function (){
+    let addTaskButton = function() {
         addTask();
     }
     inputField.addEventListener("keyup", function(event) {
         if (event.keyCode === 13) {
-          commitButton.click();
+            commitButton.click();
         }
-      });
+    });
     createTask.appendChild(inputField);
 
     let commitButton = document.createElement("button");
@@ -28,7 +29,7 @@ function createPage(){
     commitButton.addEventListener("click", addTaskButton, false);
     createTask.appendChild(commitButton);
     document.getElementById("body").appendChild(createTask);
-    
+
     let taskList = document.createElement("div");
     taskList.id = "taskList";
     let taskListHead = document.createElement("h2");
@@ -37,21 +38,21 @@ function createPage(){
     document.getElementById("body").appendChild(taskList);
 }
 
-function addTask(){
-    
+function addTask() {
+
     let newTask = document.createElement("div");
     newTask.className = "task";
 
     let task = document.createElement("span");
-    task.textContent= document.getElementById("newTask").value;
+    task.textContent = document.getElementById("newTask").value;
     document.getElementById("newTask").textContent = "";
     newTask.appendChild(task);
 
     let doneButton = document.createElement("button");
     doneButton.textContent = "\u2713";
     doneButton.className = "done";
-    let taskDone = function(){
-        newTask.className="task done";
+    let taskDone = function() {
+        newTask.className = "task done";
         newTask.removeChild(doneButton);
     }
     doneButton.addEventListener("click", taskDone, false);
@@ -60,16 +61,16 @@ function addTask(){
     let removeButton = document.createElement("button");
     removeButton.textContent = "\u2573";
     removeButton.className = "remove";
-    let removeItem = function(){
-        $(this).parent().fadeOut("1000",function(){
+    let removeItem = function() {
+        $(this).parent().fadeOut("1000", function() {
             newTask.parentNode.removeChild(newTask);
-        })    
+        })
     }
     removeButton.addEventListener("click", removeItem, false)
     newTask.appendChild(removeButton);
 
     newTask.style.display = "none";
     $("#taskList").append(newTask);
-    $(".task").fadeIn("1000");
-    
+    $(".task").slideDown("1000");
+
 }
