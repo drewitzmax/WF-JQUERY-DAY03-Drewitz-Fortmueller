@@ -1,4 +1,5 @@
 * {
+<<<<<<< HEAD
     margin: 0;
     padding: 0;
     color: #363357;
@@ -96,3 +97,106 @@ body #taskList .done {
     background-color: #B5B5B5;
     order: 1;
 }
+=======
+  margin: 0;
+  padding: 0;
+  color: #363357;
+  font-family: sans-serif;
+}
+
+body {
+  width: 60vw;
+  margin: 0 auto;
+  background-color: #F0EFF2;
+  text-align: center;
+}
+
+body header {
+  width: 100%;
+  background-color: #F7F6F9;
+  text-align: center;
+}
+
+body header h1 {
+  padding: 40px;
+}
+
+body #createTask {
+  padding: 20px;
+}
+
+body #createTask input {
+  border-radius: 4px 0px 0px 4px;
+  border: none;
+  width: 50%;
+  height: 30px;
+}
+
+body #createTask button {
+  border-radius: 4px;
+  border: none;
+  width: 20%;
+  background-color: #65B25F;
+  height: 30px;
+}
+
+body #taskList {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 50px;
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body #taskList h2 {
+  width: 90%;
+}
+
+body #taskList .task {
+  width: 90%;
+  background-color: #363357;
+  margin: 2px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+body #taskList .task span {
+  margin: 3px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  color: white;
+  float: left;
+  vertical-align: center;
+}
+
+body #taskList .task button {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  float: right;
+  margin: 3px;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 3px;
+}
+
+body #taskList .task .done {
+  background-color: #48AD76;
+}
+
+body #taskList .task .remove {
+  background-color: #DD5746;
+}
+
+body #taskList .done {
+  background-color: #B5B5B5;
+}
+/*# sourceMappingURL=style.css.map */
+>>>>>>> ea25547ab9c73cc7c3cd23ef67386cc992a106e2

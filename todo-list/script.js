@@ -1,4 +1,5 @@
 tasks = 0;
+order = 1;
 createPage();
 
 function createPage() {
@@ -14,9 +15,13 @@ function createPage() {
     inputField.type = "text";
     inputField.placeholder = "New Task here";
     inputField.id = "newTask";
+<<<<<<< HEAD
     let addTaskButton = function() {
         addTask();
     }
+=======
+
+>>>>>>> ea25547ab9c73cc7c3cd23ef67386cc992a106e2
     inputField.addEventListener("keyup", function(event) {
         if (event.keyCode === 13) {
             commitButton.click();
@@ -26,7 +31,10 @@ function createPage() {
 
     let commitButton = document.createElement("button");
     commitButton.textContent = "Add Task";
-    commitButton.addEventListener("click", addTaskButton, false);
+    commitButton.addEventListener("click", function(){
+        addTask();
+        $("#newTask").val("");
+    });
     createTask.appendChild(commitButton);
     document.getElementById("body").appendChild(createTask);
 
@@ -51,8 +59,18 @@ function addTask() {
     let doneButton = document.createElement("button");
     doneButton.textContent = "\u2713";
     doneButton.className = "done";
+<<<<<<< HEAD
     let taskDone = function() {
         newTask.className = "task done";
+=======
+    let taskDone = function(){
+        $(this).parent().slideUp("500",function(){
+            newTask.className="task done";
+            newTask.style.order = order;
+            order ++;
+        })
+        $(this).parent().slideDown("500");
+>>>>>>> ea25547ab9c73cc7c3cd23ef67386cc992a106e2
         newTask.removeChild(doneButton);
     }
     doneButton.addEventListener("click", taskDone, false);
@@ -61,8 +79,13 @@ function addTask() {
     let removeButton = document.createElement("button");
     removeButton.textContent = "\u2573";
     removeButton.className = "remove";
+<<<<<<< HEAD
     let removeItem = function() {
         $(this).parent().fadeOut("1000", function() {
+=======
+    let removeItem = function(){
+        $(this).parent().animate({marginLeft: '+=80px',opacity: 0.0},"1000",function(){
+>>>>>>> ea25547ab9c73cc7c3cd23ef67386cc992a106e2
             newTask.parentNode.removeChild(newTask);
         })
     }
@@ -72,5 +95,9 @@ function addTask() {
     newTask.style.display = "none";
     $("#taskList").append(newTask);
     $(".task").slideDown("1000");
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> ea25547ab9c73cc7c3cd23ef67386cc992a106e2
 }
