@@ -1,4 +1,5 @@
 tasks = 0;
+order = 1;
 createPage();
 function createPage(){
     let header = document.createElement("header");
@@ -51,7 +52,12 @@ function addTask(){
     doneButton.textContent = "\u2713";
     doneButton.className = "done";
     let taskDone = function(){
-        newTask.className="task done";
+        $(this).parent().slideUp("500",function(){
+            newTask.className="task done";
+            newTask.style.order = order;
+            order ++;
+        })
+        $(this).parent().slideDown("500");
         newTask.removeChild(doneButton);
     }
     doneButton.addEventListener("click", taskDone, false);
@@ -61,7 +67,7 @@ function addTask(){
     removeButton.textContent = "\u2573";
     removeButton.className = "remove";
     let removeItem = function(){
-        $(this).parent().fadeOut("1000",function(){
+        $(this).parent().animate({marginLeft: '+=80px',opacity: 0.0},"1000",function(){
             newTask.parentNode.removeChild(newTask);
         })    
     }
@@ -70,6 +76,6 @@ function addTask(){
 
     newTask.style.display = "none";
     $("#taskList").append(newTask);
-    $(".task").fadeIn("1000");
+    $(".task").slideDown("1000");
     
 }
